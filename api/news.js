@@ -4,6 +4,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ message: "Method not allowed" });
   }
 
+  // Prefer a server-only key name; keep VITE_* as fallback for compatibility.
   const apiKey = process.env.GUARDIAN_API_KEY || process.env.VITE_GUARDIAN_API_KEY;
 
   if (!apiKey) {

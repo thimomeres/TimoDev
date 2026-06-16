@@ -1,7 +1,7 @@
 import pressMouSigning from "@/assets/images/pres&media/press-mou-signing.png";
 import { formatArticleDate } from "@/utils/formatDate";
 
-const GUARDIAN_API_PROXY_URL = "/api/guardian-news";
+const GUARDIAN_API_PROXY_URL = "/api/news";
 const MIN_ARTICLES = 6;
 const PLACEHOLDER_IMAGE = pressMouSigning;
 const FALLBACK_DESCRIPTION =

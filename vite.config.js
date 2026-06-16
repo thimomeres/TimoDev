@@ -26,7 +26,7 @@ export default defineConfig(({ mode }) => {
     },
     server: {
       proxy: {
-        "/api/guardian-news": {
+        "/api/news": {
           target: "https://content.guardianapis.com",
           changeOrigin: true,
           rewrite: () => `/search?${guardianParams.toString()}`,

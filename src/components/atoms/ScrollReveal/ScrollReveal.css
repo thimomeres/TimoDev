@@ -1,0 +1,34 @@
+/* Wrapper tetap di layout — animasi di child agar observer & efek visual konsisten */
+.scroll-reveal {
+  width: 100%;
+}
+
+.scroll-reveal__content {
+  opacity: 0;
+  transform: translateY(48px);
+}
+
+.scroll-reveal--visible .scroll-reveal__content {
+  animation: scroll-reveal-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--scroll-reveal-delay, 0ms);
+}
+
+@keyframes scroll-reveal-in {
+  from {
+    opacity: 0;
+    transform: translateY(48px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal__content {
+    opacity: 1;
+    transform: none;
+    animation: none !important;
+  }
+}

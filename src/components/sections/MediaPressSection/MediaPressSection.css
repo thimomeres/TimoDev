@@ -1,0 +1,61 @@
+/* Rectangle 8 — Figma: 1440×1025, rgba(222, 226, 230, 1) */
+.media-press {
+  width: 100%;
+  background-color: rgba(222, 226, 230, 1);
+}
+
+.media-press__canvas {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  background-color: rgba(222, 226, 230, 1);
+}
+
+.media-press__inner {
+  box-sizing: border-box;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 72px 64px 48px 61px;
+}
+
+/* Figma: 138×36, Oswald 400 / 24px / #AA0433, center */
+.media-press__label {
+  margin: 0 auto 64px;
+  width: 138px;
+  height: 36px;
+  font-family: var(--font-oswald);
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  color: rgba(170, 4, 51, 1);
+}
+
+/* Tablet */
+@media (max-width: 1279px) {
+  .media-press__inner {
+    padding: 56px 40px 40px;
+  }
+
+  .media-press__label {
+    margin-bottom: 48px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .media-press__inner {
+    padding: 40px 20px 32px;
+  }
+
+  .media-press__label {
+    width: auto;
+    height: auto;
+    margin-bottom: 32px;
+    font-size: 20px;
+  }
+}

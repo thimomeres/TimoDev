@@ -1,0 +1,149 @@
+.press-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100%;
+  background-color: #fff;
+}
+
+.press-card__image {
+  display: block;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.press-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 14px;
+  min-height: 260px;
+  padding: 22px 24px 28px;
+}
+
+/* Figma: Oswald uppercase title, max 2 baris */
+.press-card__title {
+  margin: 0;
+  font-family: var(--font-oswald);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: #252527;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.press-card__meta {
+  margin: 0;
+  font-family: var(--font-montserrat);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1;
+  color: #252527;
+}
+
+/* Figma: excerpt max 3 baris */
+.press-card__description {
+  margin: 0;
+  font-family: var(--font-montserrat);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #252527;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.press-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+  font-family: var(--font-montserrat);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: #927642;
+  text-decoration: none;
+}
+
+.press-card__arrow {
+  color: #927642;
+}
+
+/* Skeleton loading */
+.press-card--skeleton {
+  pointer-events: none;
+}
+
+.press-card__image--skeleton,
+.press-card__line {
+  background: linear-gradient(90deg, #e5e8eb 0%, #f3f4f6 50%, #e5e8eb 100%);
+  background-size: 200% 100%;
+  animation: press-card-shimmer 1.4s ease-in-out infinite;
+}
+
+.press-card__line {
+  height: 14px;
+  border-radius: 2px;
+}
+
+.press-card__line--title {
+  height: 20px;
+  width: 92%;
+}
+
+.press-card__line--meta {
+  width: 55%;
+}
+
+.press-card__line--text {
+  width: 100%;
+}
+
+.press-card__line--link {
+  width: 40%;
+  margin-top: auto;
+}
+
+@keyframes press-card-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .press-card__image {
+    height: 200px;
+  }
+
+  .press-card__body {
+    min-height: 220px;
+    padding: 18px 18px 22px;
+    gap: 12px;
+  }
+
+  .press-card__title {
+    font-size: 18px;
+  }
+
+  .press-card__meta,
+  .press-card__description,
+  .press-card__link {
+    font-size: 13px;
+  }
+}

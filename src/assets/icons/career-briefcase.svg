@@ -1,0 +1,11 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path
+    d="M8 18V14C8 11.7909 9.79086 10 12 10H36C38.2091 10 40 11.7909 40 14V18"
+    stroke="#927642"
+    stroke-width="2"
+    stroke-linecap="round"
+  />
+  <rect x="6" y="18" width="36" height="22" rx="2" stroke="#927642" stroke-width="2" />
+  <path d="M20 10V8C20 6.89543 20.8954 6 22 6H26C27.1046 6 28 6.89543 28 8V10" stroke="#927642" stroke-width="2" />
+  <line x1="6" y1="28" x2="42" y2="28" stroke="#927642" stroke-width="2" />
+</svg>

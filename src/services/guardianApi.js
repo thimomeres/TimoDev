@@ -1,7 +1,7 @@
 import pressMouSigning from "@/assets/images/pres&media/press-mou-signing.png";
 import { formatArticleDate } from "@/utils/formatDate";
 
-const GUARDIAN_API_URL = "https://content.guardianapis.com/search";
+const GUARDIAN_API_PROXY_URL = "/api/guardian-news";
 const MIN_ARTICLES = 6;
 const PLACEHOLDER_IMAGE = pressMouSigning;
 const FALLBACK_DESCRIPTION =
@@ -41,33 +41,17 @@ function mapGuardianArticle(article) {
 }
 
 export async function fetchGuardianArticles() {
-  const apiKey = import.meta.env.VITE_GUARDIAN_API_KEY;
-
-  if (!apiKey) {
-    throw new Error(
-      "Kunci API Guardian belum diatur. Tambahkan VITE_GUARDIAN_API_KEY di file .env.",
-    );
-  }
-
-  const params = new URLSearchParams({
-    "api-key": apiKey,
-    q: "law OR legal OR court OR justice OR lawyer",
-    "page-size": "30",
-    "show-fields": "thumbnail,trailText,standfirst,headline",
-    "order-by": "newest",
-  });
-
   let response;
   try {
-    response = await fetch(`${GUARDIAN_API_URL}?${params.toString()}`);
+    response = await fetch(GUARDIAN_API_PROXY_URL);
   } catch {
     throw new Error(
-      "Gagal terhubung ke Guardian API. Cek koneksi internet, nonaktifkan ad blocker/VPN, lalu coba lagi.",
+      "Gagal terhubung ke layanan berita. Cek koneksi internet lalu coba lagi.",
     );
   }
 
   if (!response.ok) {
-    throw new Error(`Permintaan API Guardian gagal (${response.status}).`);
+    throw new Error(`Permintaan berita gagal (${response.status}).`);
   }
 
   const data = await response.json();

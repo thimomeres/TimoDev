@@ -1,0 +1,307 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 902px;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+.hero__bg-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero__background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(100%) blur(2px);
+  transform: scale(1.04);
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to left,
+      rgba(255, 255, 255, 0.88) 0%,
+      rgba(255, 255, 255, 0.5) 16%,
+      rgba(255, 255, 255, 0.12) 38%,
+      transparent 58%
+    ),
+    rgba(255, 255, 255, 0.2);
+}
+
+.hero__gradient {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 75% 65% at 78% 88%,
+    rgba(181, 130, 145, 0.5) 0%,
+    rgba(170, 4, 51, 0.22) 40%,
+    transparent 72%
+  );
+}
+
+.hero__gradient-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 432px;
+  background: linear-gradient(
+    180deg,
+    rgba(249, 249, 249, 0) 0%,
+    rgba(216, 200, 209, 0.12) 18%,
+    rgba(216, 200, 209, 0.35) 42%,
+    rgba(196, 145, 158, 0.55) 68%,
+    rgba(181, 130, 145, 0.72) 85%,
+    rgba(170, 90, 110, 0.82) 100%
+  );
+  pointer-events: none;
+}
+
+.hero__canvas {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.hero__red-shape {
+  position: absolute;
+  top: 179px;
+  left: -16px;
+  width: 303.66px;
+  height: 669.21px;
+  display: block;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.hero__statue {
+  position: absolute;
+  top: -16px;
+  left: 55px;
+  width: 598px;
+  height: 916px;
+  display: block;
+  object-fit: cover;
+  object-position: top center;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.hero__sidebar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 128px;
+  height: 900px;
+  padding: 16px 8px;
+  background-color: #404040;
+  z-index: 12;
+  box-sizing: border-box;
+}
+
+.hero__menu-btn {
+  position: absolute;
+  top: 84px;
+  left: 52px;
+  display: flex;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.hero__hamburger {
+  display: block;
+  width: 24px;
+  height: 14px;
+}
+
+.hero__scroll-down {
+  position: absolute;
+  bottom: 130px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  z-index: 21;
+}
+
+.hero__scroll-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  margin: 0;
+  font-family: var(--font-montserrat);
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: 0.1em;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.hero__scroll-icon {
+  display: flex;
+  line-height: 0;
+}
+
+.hero__ripped-paper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 902px;
+  z-index: 20;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero__ripped-paper-layer {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  display: block;
+  object-fit: fill;
+}
+
+.hero__ripped-paper-layer--upper {
+  top: 470px;
+  height: 896px;
+}
+
+.hero__ripped-paper-layer--lower {
+  top: 828px;
+  height: 201px;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 10;
+  height: 100%;
+}
+
+/* Tablet */
+@media (max-width: 1279px) {
+  .hero {
+    height: 780px;
+  }
+
+  .hero__statue {
+    left: 20px;
+    width: 420px;
+    height: auto;
+    max-height: 780px;
+  }
+
+  .hero__red-shape {
+    top: 160px;
+    left: -40px;
+    width: 220px;
+    height: auto;
+  }
+
+  .hero__sidebar {
+    width: 96px;
+    height: 100%;
+  }
+
+  .hero__menu-btn {
+    left: 36px;
+  }
+
+  .hero__scroll-down {
+    bottom: 100px;
+  }
+
+  .hero__ripped-paper {
+    height: 780px;
+  }
+
+  .hero__ripped-paper-layer--upper {
+    top: 400px;
+    height: 700px;
+  }
+
+  .hero__ripped-paper-layer--lower {
+    top: 700px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .hero {
+    height: auto;
+    min-height: 620px;
+  }
+
+  .hero__statue {
+    top: 60px;
+    left: 50%;
+    width: min(260px, 70vw);
+    height: auto;
+    transform: translateX(-58%);
+  }
+
+  .hero__red-shape {
+    display: none;
+  }
+
+  .hero__sidebar {
+    width: 56px;
+    height: 100%;
+    min-height: 620px;
+  }
+
+  .hero__menu-btn {
+    top: 72px;
+    left: 16px;
+    display: none;
+  }
+
+  .hero__scroll-down {
+    bottom: 48px;
+    z-index: 22;
+  }
+
+  .hero__ripped-paper {
+    height: 100%;
+    min-height: 620px;
+  }
+
+  .hero__ripped-paper-layer--upper {
+    top: 55%;
+    height: 60%;
+  }
+
+  .hero__ripped-paper-layer--lower {
+    top: 82%;
+    height: 24%;
+  }
+
+  .hero__overlay {
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.75) 0%,
+        rgba(255, 255, 255, 0.35) 40%,
+        transparent 70%
+      ),
+      rgba(255, 255, 255, 0.15);
+  }
+}

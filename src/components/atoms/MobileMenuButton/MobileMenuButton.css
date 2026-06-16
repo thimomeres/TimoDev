@@ -1,0 +1,31 @@
+.mobile-menu-btn {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .mobile-menu-btn {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 150;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    padding: 0;
+    border: none;
+    background-color: #404040;
+    cursor: pointer;
+  }
+
+  .mobile-menu-btn__icon {
+    display: block;
+    width: 24px;
+    height: 14px;
+  }
+
+  .mobile-menu-btn--open {
+    z-index: 250;
+  }
+}

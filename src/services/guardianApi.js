@@ -57,7 +57,14 @@ export async function fetchGuardianArticles() {
     "order-by": "newest",
   });
 
-  const response = await fetch(`${GUARDIAN_API_URL}?${params.toString()}`);
+  let response;
+  try {
+    response = await fetch(`${GUARDIAN_API_URL}?${params.toString()}`);
+  } catch {
+    throw new Error(
+      "Gagal terhubung ke Guardian API. Cek koneksi internet, nonaktifkan ad blocker/VPN, lalu coba lagi.",
+    );
+  }
 
   if (!response.ok) {
     throw new Error(`Permintaan API Guardian gagal (${response.status}).`);

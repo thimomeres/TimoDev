@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-oswald: "Oswald", sans-serif;
+  --font-playfair: "Playfair Display", Georgia, "Times New Roman", serif;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  font-family: var(--font-montserrat);
+  overflow-x: hidden;
+}

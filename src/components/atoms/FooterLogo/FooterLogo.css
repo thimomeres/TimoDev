@@ -1,0 +1,13 @@
+.footer-logo {
+  display: block;
+  width: 152.46px;
+  height: 62px;
+  object-fit: contain;
+}
+
+@media (max-width: 767px) {
+  .footer-logo {
+    width: 130px;
+    height: auto;
+  }
+}

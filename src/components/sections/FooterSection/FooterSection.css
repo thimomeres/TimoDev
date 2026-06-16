@@ -1,0 +1,123 @@
+/* Figma footer — 1440×350, #484848 */
+.footer {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  background-color: #484848;
+}
+
+.footer__inner {
+  box-sizing: border-box;
+  max-width: 1440px;
+  min-height: 350px;
+  margin: 0 auto;
+  padding: 72px 64px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 40px 0 48px;
+}
+
+.footer__nav-link {
+  position: relative;
+  padding: 0 16px;
+  font-family: var(--font-montserrat);
+  font-weight: 300;
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer__nav-link:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 1px;
+  height: 11px;
+  background-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-50%);
+}
+
+.footer__nav-link:hover,
+.footer__nav-link:focus-visible {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.footer__bottom {
+  width: 100%;
+  margin-top: auto;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.footer__copyright,
+.footer__update {
+  margin: 0;
+  font-family: var(--font-montserrat);
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.footer__update {
+  flex-shrink: 0;
+  text-align: right;
+}
+
+@media (max-width: 1279px) {
+  .footer__inner {
+    min-height: auto;
+    padding: 56px 40px 28px;
+  }
+
+  .footer__nav {
+    margin: 32px 0 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer__inner {
+    padding: 48px 20px 24px;
+  }
+
+  .footer__nav {
+    flex-direction: column;
+    gap: 14px;
+    margin: 28px 0 32px;
+  }
+
+  .footer__nav-link {
+    padding: 0;
+  }
+
+  .footer__nav-link::after {
+    display: none;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding-top: 20px;
+  }
+
+  .footer__update {
+    text-align: left;
+  }
+}
